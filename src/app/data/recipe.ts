@@ -1,6 +1,7 @@
-[
+export const data=[
     {
-      "recipe_name": "Vegetable Stir-Fry with Tofu",
+      "id":100,
+      "title": "Vegetable Stir-Fry with Tofu",
       "description": "A colorful and nutritious stir-fry featuring tofu and assorted vegetables tossed in a savory sauce, perfect for a quick and healthy meal.",
       "ingredients": [
         "14 oz firm tofu, pressed and cubed",
@@ -26,19 +27,14 @@
         "Serve vegetable stir-fry over cooked rice."
       ],
       "prep_time_minutes": 15,
-      "cook_time_minutes": 10,
+      "cookingTime": 10,
       "total_time_minutes": 25,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 320,
-        "fat": 18,
-        "carbohydrates": 20,
-        "protein": 22,
-        "fiber": 5
-      }
+      "calorieCount": 320,
     },
     {
-      "recipe_name": "Mushroom Risotto",
+      "id":101,
+      "title": "Mushroom Risotto",
       "description": "Creamy and flavorful risotto made with Arborio rice and mushrooms, finished with Parmesan cheese and fresh herbs.",
       "ingredients": [
         "1 cup Arborio rice",
@@ -65,19 +61,14 @@
         "Garnish with chopped fresh parsley before serving."
       ],
       "prep_time_minutes": 10,
-      "cook_time_minutes": 30,
+      "cookingTime": 30,
       "total_time_minutes": 40,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 320,
-        "fat": 12,
-        "carbohydrates": 45,
-        "protein": 8,
-        "fiber": 3
-      }
+      "calorieCount": 320,
     },
     {
-      "recipe_name": "Caprese Salad",
+      "id":102,
+      "title": "Caprese Salad",
       "description": "A simple and elegant salad showcasing ripe tomatoes, fresh mozzarella cheese, and fragrant basil, drizzled with balsamic glaze.",
       "ingredients": [
         "2 large tomatoes, sliced",
@@ -95,19 +86,14 @@
         "Serve immediately as a refreshing appetizer or side dish."
       ],
       "prep_time_minutes": 10,
-      "cook_time_minutes": 0,
+      "cookingTime": 20,
       "total_time_minutes": 10,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 200,
-        "fat": 15,
-        "carbohydrates": 4,
-        "protein": 12,
-        "fiber": 1
-      }
+      "calorieCount": 200,
     },
     {
-      "recipe_name": "Chicken Enchiladas",
+      "id":103,
+      "title": "Chicken Enchiladas",
       "description": "Savory chicken-filled tortillas topped with enchilada sauce and melted cheese, baked to perfection for a comforting Mexican-inspired meal.",
       "ingredients": [
         "2 cups cooked shredded chicken",
@@ -133,19 +119,14 @@
         "Garnish with chopped fresh cilantro before serving."
       ],
       "prep_time_minutes": 20,
-      "cook_time_minutes": 25,
+      "cookingTime": 25,
       "total_time_minutes": 45,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 450,
-        "fat": 25,
-        "carbohydrates": 30,
-        "protein": 30,
-        "fiber": 3
-      }
+      "calorieCount": 450,
     },
     {
-      "recipe_name": "Quinoa Salad with Chickpeas and Avocado",
+      "id":104,
+      "title": "Quinoa Salad with Chickpeas and Avocado",
       "description": "A refreshing and nutritious salad featuring quinoa, chickpeas, avocado, and fresh vegetables, dressed with a tangy lemon vinaigrette.",
       "ingredients": [
         "1 cup quinoa, rinsed",
@@ -170,19 +151,14 @@
         "Serve chilled as a healthy and satisfying main dish or side salad."
       ],
       "prep_time_minutes": 15,
-      "cook_time_minutes": 20,
+      "cookingTime": 20,
       "total_time_minutes": 35,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 320,
-        "fat": 18,
-        "carbohydrates": 35,
-        "protein": 9,
-        "fiber": 8
-      }
+      "calorieCount": 320,
     },
     {
-      "recipe_name": "Beef Tacos",
+      "id":105,
+      "title": "Beef Tacos",
       "description": "Classic tacos filled with seasoned ground beef, lettuce, tomatoes, cheese, and your favorite toppings, served in crispy taco shells.",
       "ingredients": [
         "1 lb ground beef",
@@ -204,19 +180,14 @@
         "Serve immediately with optional toppings such as sour cream, salsa, and guacamole."
       ],
       "prep_time_minutes": 10,
-      "cook_time_minutes": 15,
+      "cookingTime": 15,
       "total_time_minutes": 25,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 380,
-        "fat": 22,
-        "carbohydrates": 20,
-        "protein": 24,
-        "fiber": 3
-      }
+      "calorieCount": 380,
     },
     {
-      "recipe_name": "Greek Salad",
+      "id":106,
+      "title": "Greek Salad",
       "description": "A vibrant salad featuring crisp lettuce, juicy tomatoes, cucumbers, red onions, Kalamata olives, and feta cheese, dressed with a zesty Greek vinaigrette.",
       "ingredients": [
         "4 cups chopped romaine lettuce",
@@ -237,19 +208,14 @@
         "Serve immediately as a refreshing side dish or light meal."
       ],
       "prep_time_minutes": 10,
-      "cook_time_minutes": 0,
+      "cookingTime": 30,
       "total_time_minutes": 10,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 220,
-        "fat": 15,
-        "carbohydrates": 15,
-        "protein": 8,
-        "fiber": 5
-      }
+      "calorieCount": 220,
     },
     {
-      "recipe_name": "Vegetarian Chili",
+      "id":107,
+      "title": "Vegetarian Chili",
       "description": "Hearty and flavorful chili loaded with beans, vegetables, and spices, simmered to perfection for a comforting meatless meal.",
       "ingredients": [
         "1 tablespoon olive oil",
@@ -278,19 +244,14 @@
         "Top with optional toppings such as sour cream, shredded cheese, and sliced jalapenos if desired."
       ],
       "prep_time_minutes": 15,
-      "cook_time_minutes": 40,
+      "cookingTime": 40,
       "total_time_minutes": 55,
       "servings": 6,
-      "nutrition_facts": {
-        "calories": 250,
-        "fat": 5,
-        "carbohydrates": 45,
-        "protein": 10,
-        "fiber": 12
-      }
+      "calorieCount": 250,
     },
     {
-      "recipe_name": "Shrimp Scampi",
+      "id":108,
+      "title": "Shrimp Scampi",
       "description": "Delicious and elegant shrimp dish cooked in a garlic butter sauce with white wine and lemon, served over pasta or with crusty bread.",
       "ingredients": [
         "8 oz linguine pasta",
@@ -317,19 +278,14 @@
         "Serve hot as a main dish with crusty bread or over pasta."
       ],
       "prep_time_minutes": 15,
-      "cook_time_minutes": 15,
+      "cookingTime": 15,
       "total_time_minutes": 30,
       "servings": 4,
-      "nutrition_facts": {
-        "calories": 350,
-        "fat": 12,
-        "carbohydrates": 40,
-        "protein": 25,
-        "fiber": 2
-      }
+      "calorieCount": 350,
     },
     {
-      "recipe_name": "Pumpkin Soup",
+      "id":109,
+      "title": "Pumpkin Soup",
       "description": "A creamy and comforting soup made with pureed pumpkin, aromatic spices, and a hint of sweetness, perfect for chilly autumn days.",
       "ingredients": [
         "2 tablespoons unsalted butter",
@@ -354,16 +310,10 @@
         "Enjoy this comforting pumpkin soup as a starter or light meal."
       ],
       "prep_time_minutes": 15,
-      "cook_time_minutes": 20,
+      "cookingTime": 20,
       "total_time_minutes": 35,
       "servings": 6,
-      "nutrition_facts": {
-        "calories": 280,
-        "fat": 20,
-        "carbohydrates": 25,
-        "protein": 5,
-        "fiber": 6
-      }
+      "calorieCount": 280,
     }
   ]
   

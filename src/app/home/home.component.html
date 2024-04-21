@@ -11,71 +11,72 @@
         <p>Services</p>
     </div>
     <div class="buttonContainer">
-        <button class="createRecipe">Add Recipe</button>
+        <button class="createRecipe" (click)="openModel()">Add Recipe</button>
     </div>
 </section>
 <section class="homeContainer spacing">
     <div class="searchBar">
-        <input type="text" placeholder="Search Here" class="search"/>
-        <i class="fa-solid fa-magnifying-glass searchBtn"></i>
+        <input type="text" placeholder="Search Here" class="search" #filter/>
+        
+        <button class="searchBtn" (click)="filterResults(filter.value)"><p>SEARCH</p></button>
     </div>
 </section>
 
 <section class="recipeContainer spacing">
-    <section class="recipeCard">
-        <h1 class="recipeTitle">Sample Recipe Title</h1>
-        <p class="recipeDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, velit. 
-            Eius autem omnis possimus iste velit porro
-             tempora dolor, culpa expedita deserunt temporibus fuga tempore ratione vitae.
-              Maxime, sunt impedit.</p>
-        <p class="recipeTime">Cooking time: 10 minutes</p>
-        <p class="recipeCalorie">Calorie: 320g</p>
-        <div class="buttons">
-            <button class="update"><i class="fa-solid fa-pen icon"></i></button>
-            <button class="delete"><i class="fa-solid fa-trash icon"></i></button>
+  <!-- filteredRecipeTitleList -> recipeList -->
+    @for (item of filteredRecipeTitleList; track $index) {
+        <div class="recipeCard">
+            <h1 class="recipeTitle">{{item.title}}</h1>
+            <p class="recipeDescription">{{item.description}}</p>
+            <p class="recipeTime">Cooking time: {{item.cookingTime}} mins</p>
+            <p class="recipeCalorie">Calorie: {{item.calorieCount}} gm</p>
+            <div class="buttons">
+                <button class="update" (click)="onEdit(item)">EDIT</button>
+                <button class="delete" (click)="onDelete(item)">DELETE</button>
+            </div>
+            <div class="moreBtn" (click)="onDetailView(item)">More</div>
         </div>
-        
-    </section>
-    <section class="recipeCard">
-        <h1 class="recipeTitle">Sample Recipe Title</h1>
-        <p class="recipeDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, velit. 
-            Eius autem omnis possimus iste velit porro
-             tempora dolor, culpa expedita deserunt temporibus fuga tempore ratione vitae.
-              Maxime, sunt impedit.</p>
-        <p class="recipeTime">Cooking time: 10 minutes</p>
-        <p class="recipeCalorie">Calorie: 320g</p>
-        <div class="buttons">
-            <button class="update"><i class="fa-solid fa-pen icon"></i></button>
-            <button class="delete"><i class="fa-solid fa-trash icon"></i></button>
-        </div>
-        
-    </section>
-    <section class="recipeCard">
-        <h1 class="recipeTitle">Sample Recipe Title</h1>
-        <p class="recipeDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, velit. 
-            Eius autem omnis possimus iste velit porro
-             tempora dolor, culpa expedita deserunt temporibus fuga tempore ratione vitae.
-              Maxime, sunt impedit.</p>
-        <p class="recipeTime">Cooking time: 10 minutes</p>
-        <p class="recipeCalorie">Calorie: 320g</p>
-        <div class="buttons">
-            <button class="update"><i class="fa-solid fa-pen icon"></i></button>
-            <button class="delete"><i class="fa-solid fa-trash icon"></i></button>
-        </div>
-        
-    </section>
-    <section class="recipeCard">
-        <h1 class="recipeTitle">Sample Recipe Title</h1>
-        <p class="recipeDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, velit. 
-            Eius autem omnis possimus iste velit porro
-             tempora dolor, culpa expedita deserunt temporibus fuga tempore ratione vitae.
-              Maxime, sunt impedit.</p>
-        <p class="recipeTime">Cooking time: 10 minutes</p>
-        <p class="recipeCalorie">Calorie: 320g</p>
-        <div class="buttons">
-            <button class="update"><i class="fa-solid fa-pen icon"></i></button>
-            <button class="delete"><i class="fa-solid fa-trash icon"></i></button>
-        </div>
-        
-    </section>
+    }
 </section>
+<!-- modal -->
+  <section class="modal hide" id="myModal" #myModal>
+	  <div class="flex">
+		<p class="modalTitle">Create a new Recipe</p>
+	    <button class="btnClose" (click)="closeModel()">X</button>
+	  </div>
+
+    <div class="formContainer">
+      <input class="titleField" type="text" [(ngModel)]="recipeObj.title" placeholder="Recipe Title" required/>
+      <textarea class="descriptionField" [(ngModel)]="recipeObj.description" placeholder="Recipe Description" required></textarea>
+      <textarea class="descriptionField" [(ngModel)]="recipeObj.ingredients" placeholder="Recipe Ingredients" required></textarea>
+      <textarea class="descriptionField" [(ngModel)]="recipeObj.instructions" placeholder="Recipe Instructions" required></textarea>
+      <!-- <input class="priceField" type="number" placeholder="Price"/> -->
+      <div class="addressContainer">
+        <input type="text" class="city" placeholder="Calorie Count" [(ngModel)]="recipeObj.calorieCount"/>
+        <input type="text" class="streetName" placeholder="Cooking time" [(ngModel)]="recipeObj.cookingTime"/>
+      </div>
+      @if (recipeObj.id ==0) {
+        <button type="button" class="btn btnOkay" (click)="saveRecipe()">Save Recipe</button>
+      } @else {
+        <button type="button" class="btn btnOkay" (click)="updateRecipe()">Update Recipe</button>
+      }
+    </div>
+	</section>
+  <section class="modal hide" id="detailView" #detailView>
+	  <div class="flex">
+		<p class="modalTitle">Detail View of Recipe</p>
+	    <button class="btnClose" (click)="closeModel()">X</button>
+	  </div>
+
+    <div class="formContainer">
+      <p class="title">{{recipeObj.title}}</p>
+      <p class="description">{{recipeObj.description}}</p>
+      <p style="font-weight: 700;font-size: 20px;background: none;">Ingredients</p>
+      <p class="ingredients">{{recipeObj.ingredients}}</p>
+      <p style="font-weight: 700;font-size: 20px;background: none;">Instructions</p>
+      <p class="instructions">{{recipeObj.instructions}}</p>
+    </div>  
+	</section>
+  <div class="overlay hide" id="overlay">
+	</div>
+
